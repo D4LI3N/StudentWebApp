@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>StudentApp</title>
+</head>
+<body>
+<h1>Add New Student</h1>  
+<form action="StudentSaveServlet" method="post">  
+<table>  
+<tr><td>Name:*</td><td><input type="text" name="name"/></td></tr>  
+<tr><td>Surname:*</td><td><input type="text" name="surname"/></td></tr>  
+<tr><td>Email:</td><td><input type="email" name="email"/></td></tr>  
+<tr><td>Degree:</td><td>  
+<select name="degree" style="width:150px">  
+<option>SDE</option>  
+<option>IT</option>  
+<option>SE</option>  
+<option>CE</option>  
+</select>  
+</td></tr>  
+<tr><td colspan="2"><input type="submit" value="Save Student"/></td></tr>  
+</table>  
+</form>  
+  
+<br/>  
+<a href="StudentsViewServlet">view students</a>  
+</body>
+</html>

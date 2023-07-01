@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee" id="WebApp_ID" version="3.0">
+  <display-name>StudentApp</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  //landing (root)
+  <servlet>
+    <servlet-name>StudentsViewServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/StudentsViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentsViewServlet</servlet-name>
+    <url-pattern></url-pattern>
+  </servlet-mapping>
+    <servlet-mapping>
+    <servlet-name>StudentsViewServlet</servlet-name>
+    <url-pattern>/students</url-pattern>
+  </servlet-mapping>
+  
+  //view
+  <servlet>
+    <servlet-name>DegreesViewServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/DegreesViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DegreesViewServlet</servlet-name>
+    <url-pattern>/degrees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StudentsSubjectsViewServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/StudentsSubjectsViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentsSubjectsViewServlet</servlet-name>
+    <url-pattern>/subjects</url-pattern>
+  </servlet-mapping>
+  
+  //add
+  <servlet>
+    <servlet-name>StudentAddServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/StudentAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentAddServlet</servlet-name>
+    <url-pattern>/student-add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>DegreeAddServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/DegreeAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DegreeAddServlet</servlet-name>
+    <url-pattern>/degree-add</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubjectAddServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/SubjectAddServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectAddServlet</servlet-name>
+    <url-pattern>/subject-add</url-pattern>
+  </servlet-mapping>
+  
+  //edit
+  <servlet>
+    <servlet-name>StudentEditServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/StudentEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentEditServlet</servlet-name>
+    <url-pattern>/student-edit</url-pattern>
+  </servlet-mapping>
+    <servlet>
+    <servlet-name>DegreeEditServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/DegreeEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DegreeEditServlet</servlet-name>
+    <url-pattern>/degree-edit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubjectEditServlet</servlet-name>
+    <servlet-class>rs/ac/studentwebapp/SubjectEditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectEditServlet</servlet-name>
+    <url-pattern>/subject-edit</url-pattern>
+  </servlet-mapping>
+  
+
+</web-app>

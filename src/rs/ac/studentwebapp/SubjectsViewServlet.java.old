@@ -1,0 +1,71 @@
+package rs.ac.studentwebapp;
+
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ViewServlet
+ */
+@WebServlet("/SubjectsViewServlet")
+public class SubjectsViewServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SubjectsViewServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		response.setContentType("text/html");  
+        PrintWriter out=response.getWriter();  
+        out.println("<html><head><title>StudentApp</title><link rel='stylesheet' type='text/css' href='/StudentApp/css/style.css'/></head><body></body></html>");
+        
+        out.println("<a href='/StudentApp/StudentsViewServlet'>Students </a>"); 
+        out.println("<a href='/StudentApp/DegreesViewServlet'>Degrees </a>");   
+        out.println("<a href='/StudentApp/SubjectAddServlet'>(+) Add new Subject</a>"); 
+        
+        out.println("<ul>");
+        out.println("<li><a href='/StudentApp/StudentsViewServlet'>Students </a></li>"); 
+        out.println("<li><a href='/StudentApp/DegreesViewServlet'>Degrees </a></li>");  
+        out.println("<li style=\"float:right\"><a href='/StudentApp/StudentAddServlet'>(+) Add new Student</a></li>"); 
+        out.println("</ul>");
+        out.println("<h1>Subjects List:</h1>");  
+          
+        List<Subject> list=SubjectDao.getAllSubjects();  
+          
+        out.print("<table border='1' width='100%'");  
+        out.print("<tr><th>ID</th><th>Student ID</th><th>Name</th><th>Description</th></tr>");  
+        for(Subject subject:list){  
+        	
+        	
+      out.print("<tr><td>"+subject.getId()+"</td><td>"+subject.getStudentId()+"</td><td>"+subject.getName()+"</td><td>"+subject.getDescription()+
+    		  "</td><td><a href='SubjectEditServlet?id="+subject.getId()+"'>Edit</a></td><td><a href='SubjectDeleteServlet?id="+subject.getId()+"'>Delete</a></td></tr>");  
+        }  
+        out.print("</table>");  
+          
+        out.close();  
+		
+		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	
+
+}
